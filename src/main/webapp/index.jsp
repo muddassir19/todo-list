@@ -13,7 +13,8 @@
 </form>
 
 <ul>
-    <% for (String task : (List<String>) request.getAttribute("tasks")) { %>
+    <% for (String task : (List<String>) request.getAttribute("tasks")) 
+    { %>
     <li><%= task %></li>
     <% } %>
 </ul>
