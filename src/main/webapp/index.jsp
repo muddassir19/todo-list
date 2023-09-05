@@ -1,5 +1,5 @@
-<%@page import="com.TransportPortal.MyFunctions.* "%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
 <html>
 <head>
     <title>Todo List</title>
@@ -13,8 +13,7 @@
 </form>
 
 <ul>
-    <% for (String task : (List<String>) request.getAttribute("tasks")) 
-    { %>
+    <% for (String task : (List<String>) request.getAttribute("tasks")) { %>
     <li><%= task %></li>
     <% } %>
 </ul>
