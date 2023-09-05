@@ -8,21 +8,22 @@ import java.util.List;
 
 public class TodoServlet extends HttpServlet {
 
-    private List<String> tasks = new ArrayList<>();
+    private List<String> tasks = new ArrayList<>();  // Use this list to store tasks
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
         request.setAttribute("tasks", tasks);
         request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
         String task = request.getParameter("task");
-        if(task != null && !task.trim().isEmpty()) {
+        if (task != null && !task.trim().isEmpty()) {
             tasks.add(task);
         }
         response.sendRedirect(request.getContextPath());
     }
-
-    
 }
-

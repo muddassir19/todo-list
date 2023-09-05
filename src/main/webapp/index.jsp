@@ -29,7 +29,6 @@ if(tasksList == null) {
 }
 %>
 
-<!-- Displaying tasks in reverse order -->
 <table>
     <thead>
         <tr>
@@ -38,13 +37,10 @@ if(tasksList == null) {
         </tr>
     </thead>
     <tbody>
-        <% 
-        for (int i = tasksList.size() - 1; i >= 0; i--) {
-            String task = tasksList.get(i);
-        %>
+        <% for (int i = 0; i < tasksList.size(); i++) { %>
         <tr>
             <td><%= i + 1 %></td>
-            <td><%= task %></td>
+            <td><%= tasksList.get(i) %></td>
         </tr>
         <% } %>
     </tbody>
