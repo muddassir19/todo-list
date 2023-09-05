@@ -17,7 +17,7 @@ pipeline{
         }
         stage("Deploy to tomcat"){
             steps{
-                sh 'cp /var/lib/jenkins/workspace/todo-list/target/*.war /opt/tomcat/webapps/'                
+                sh 'cp -rf /var/lib/jenkins/workspace/todo-list/target/*.war  /opt/tomcat/webapps/'                
             }
         }
     }

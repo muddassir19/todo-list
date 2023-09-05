@@ -22,5 +22,7 @@ public class TodoServlet extends HttpServlet {
         }
         response.sendRedirect(request.getContextPath());
     }
+
+    
 }
 
