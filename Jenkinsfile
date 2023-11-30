@@ -7,17 +7,7 @@ pipeline{
     stages{
         stage("checkout"){
             steps{
-                git branch: 'master', url: 'https://github.com/muddassir19/todo-list.git'
-            }
-        }
-        stage("maven Build"){
-            steps{
-                sh 'mvn clean package'
-            }
-        }
-        stage("Deploy to tomcat"){
-            steps{
-                sh 'cp -rf /var/lib/jenkins/workspace/todo-list/target/*.war  /opt/tomcat/webapps/'                
+                git branch: 'jenkins_shared_lib', url: 'https://github.com/muddassir19/todo-list.git'
             }
         }
     }
